@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 export default function MovieOverview(){
     const [moviedetails, setMovieDetails] = React.useState({})
     const [genresArr,setGenresArr] = React.useState([])
-    console.log(moviedetails.genres)
+    
     const {id} = useParams()
    console.log(moviedetails)
     React.useEffect(() => {

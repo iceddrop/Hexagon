@@ -6,7 +6,9 @@ import {BrowserRouter as Router,Routes, Route,Navigate} from 'react-router-dom'
 import Home from './components/home'
 import Signup from './components/signup'
 import MovieOverview from './components/movieOverview'
+
 import Error from './components/errorpage'
+
 function App() {
 
   return (

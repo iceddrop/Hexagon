@@ -160,6 +160,15 @@
   margin-right:30px;
   color:hsl(148, 63%, 31%);
 }
+.show-search-btn{
+color:white;
+    font-family:poppins;
+    text-decoration: none;
+    text-align:center;
+}
+.show-search-btn:hover{
+color:hsl(148, 63%, 31%);
+}
 .overview-1{
   width:100%;
   height:1000px;

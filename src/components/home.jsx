@@ -21,6 +21,7 @@ export default function Home(){
     console.log(id)
    }
 
+ 
   const trendingEl = trendingMoviesData.map(movie=>(
    <TrendingMovie adult={movie.adult} ion={() => ion(movie.id)} id={movie.id} country={movie.origin_country[0]} rating={movie.vote_average} dateReleased={movie.first_air_date} overview={movie.overview} title={movie.original_name} image={movie.poster_path}/>
   ))

@@ -1,12 +1,11 @@
 import React from 'react'
-import {useNavigate} from 'react-router-dom'
 import {FaBackspace} from 'react-icons/fa'
 import {Link} from 'react-router-dom'
 
 export default function TrendingMovie(props){
     const event = new Date(props.dateReleased);
     const date = event.toString().slice(0,16)
-    let navigate = useNavigate();
+    
     return(
         <div  class="bug-card card trend-card  bg-dark mt-3 text-white" >
         {

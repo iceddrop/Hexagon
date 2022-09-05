@@ -27,10 +27,10 @@ export default function Navbar(){
   console.log(searchInput)
 // fetchs the data from the movie API and stores it in inside searchData state
   function search(e){
-    fetch(`https://api.tvmaze.com/search/shows?q=${searchInput}`)
+    fetch(`https://api.themoviedb.org/3/search/tv?api_key=172f725b29bb276f5c4b6e294a988fc5&language=en-US&page=1&query=${searchInput}&include_adult=false`)
     .then(res => res.json())
-    .then(data => setSearchData(data.map(movie=>movie.show))),
-    setDisplaySearchText(val=>!val)
+    .then(data => setSearchData(data.results.map(movie=>movie))),
+    setDisplaySearchText(val=>!val),
     e.preventDefault();
   }
 
@@ -40,7 +40,7 @@ console.log(searchData)
 
 //passing search result data to search component as props
     const moveEl = searchData.map(movie =>(
-      <Search id={movie.id}  link={movie._links.self.href} name={movie.name} image={movie.image.original} summary={movie.summary}/>
+      <Search id={movie.id}  name={movie.name} image={movie.poster_path} summary={movie.overview}/>
     )
     )
 
@@ -52,6 +52,8 @@ console.log(searchData)
     // calculates the min and max width for horizontal scroll.
     setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth + 350)
   },[])
+
+
 
     return(
         <>

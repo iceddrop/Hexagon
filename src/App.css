@@ -1,0 +1,605 @@
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&family=Poppins:wght@300&family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Cinzel:wght@600&family=Mate&family=Poppins:ital,wght@1,300&display=swap');
+.navbar-brand{
+  font-family:Metal Mania;
+  color:hsl(148, 63%, 31%)!important;
+  font-size: 30px;
+}
+.form{
+  font-family:poppins;
+  font-size:12px;
+}
+.search-btn{
+  background:hsl(148, 63%, 31%);
+  color:white;
+  border:none;
+  padding:7px 10px 7px 10px;
+  border-radius:5px;
+  font-family:poppins;
+}
+.nav-link{
+  font-family:poppins;
+  cursor:pointer;
+  color:hsl(184, 9%, 62%)!important;
+}
+.card-img-top{
+  width: 100%; /* or any custom size */
+  height: 100%; 
+  object-fit: contain;
+
+}
+.card{
+    width:16rem; 
+    min-width:10rem;
+    
+}
+
+.card-text{
+  text-align:center;
+  font-family:poppins;
+  font-weight:bold;
+}
+.inner-carousel{
+  display:flex!important;
+}
+.carousel{
+  cursor:grab;
+  overflow:hidden;
+}
+.search-body{
+  margin:70px 0 0 0;
+}
+.result-text{
+  color:red;
+  font-family:poppins; 
+  padding:15px 10px 10px 10px;
+}
+.home-section{
+  position:relative;
+  object-fit:contain;
+  height:500px;
+ 
+  background-repeat: none;
+  background-size: cover;
+  background-blend-mode: luminosity;
+}
+.home-overlay{
+  width:100%;
+  height:100%;
+  background: linear-gradient(90deg, transparent 0%, rgba(19, 18, 18,0.5) 62%);
+}
+.banner{
+  position:relative;
+  top:130px;
+  font-family:poppins;
+  color:white;
+  line-height:30px;
+}
+.title{
+  font-family:Righteous;
+   font-weight:bolder;
+   letter-spacing:1px;
+}
+.paragraph-1{
+  font-weight:300;
+  letter-spacing:1px;
+  margin-top:20px;
+}
+.btn-div{
+  margin-top:40px;
+}
+.btn-1{
+  color:gold;
+  border:2px solid gold;
+  font-family: poppins;
+  text-decoration:none;
+  padding:10px;
+  border-radius:10px;
+  width:180px;
+  text-align: center;
+  font-weight:bold;
+  
+}
+.genres{
+  display:flex;
+  flex-direction:column;
+}
+.btn-2{
+  color:gold;
+  border:2px solid gold;
+  font-family: poppins;
+  text-decoration:none;
+  padding:10px;
+  border-radius:10px;
+  width:180px;
+  text-align: center;
+  font-weight:bold;
+}
+.btn-1:hover{
+  background:gold;
+  color:white;
+}
+.btn-2:hover{
+  background:gold;
+  color:white;
+}
+.trend-title{
+  margin-left:20px;
+  color:hsl(148, 63%, 31%);
+  font-family:poppins; 
+  padding-top: 30px;
+  font-weight:bolder;
+}
+.card-body{
+  display: flex;
+  justify-content:center;
+}
+.show-btn-1{
+  background:transparent;
+  border: none;
+  color:white;
+  font-family:poppins;
+}
+.show-btn{
+  background:transparent;
+  border: none;
+  font-family:poppins;
+  border:2px solid hsl(148, 63%, 31%);
+  border-radius:5px;
+  color:hsl(148, 63%, 31%);
+  padding:5px 20px;
+  margin-left:30px;
+  text-decoration: none;
+}
+.show-btn:hover{
+  color:hsl(148, 63%, 31%);
+  text-decoration: none;
+}
+.back-btn{
+  font-size:30px;
+  margin-right:30px;
+  color:hsl(148, 63%, 31%);
+}
+.overview-1{
+  width:100%;
+  height:1000px;
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+.detail{
+  color:black;
+}
+.show-poster{
+  width:200px;
+  height:200px;
+  object-fit: contain;
+}
+.show-desc{
+  font-family: poppins;
+  color:white;
+  font-style: italic;
+  margin-top:15px;
+}
+.show-details-div{
+  position:relative;
+  top:70px;
+}
+.show-title{
+  color:white;
+  font-family: Aboreto;
+  font-size:23px;
+}
+.micro-show-details-div{
+  font-family:Mate;
+  color:white;
+}
+.watchShow{
+  position:relative;
+  top:15px;
+  background:hsl(148, 63%, 31%);
+  border: none;
+  font-family:poppins;
+  border-radius:5px;
+  color:white;
+  padding:10px 20px;
+  text-decoration: none;
+}
+.watchShow:hover{
+  color:white;
+}
+.overlay{
+  width:100%;
+  height:100%;
+  background: linear-gradient(180deg, rgb(19, 18, 18) 0%, transparent);
+}
+.credits{
+  display:flex;
+  justify-content:center;
+  margin-top:150px;
+}
+.genres{
+  color:white;
+}
+.genre-list{
+  font-family:poppins;
+  list-style:none;
+}
+.writers{
+  color:white;
+}
+.writers-list{
+  font-family:poppins;
+  list-style:none;
+}
+.credit-title{
+  font-size:17px;
+  font-weight:bold;
+}
+@media only screen and (min-width:320px) and (max-width:430px){
+  .navbar{
+    background:rgba(1, 0, 41, 1);
+    padding-bottom:20px;
+  }
+  .navbar-toggler{
+    color:hsl(148, 63%, 31%)!important;
+  }
+  .nav-link{
+    color:hsl(184, 9%, 62%)!important;
+  }
+  .home-section{
+    height:580px!important;
+  }
+  .banner{
+    padding-right: 30px;
+    padding-left:20px;
+  }
+  .btn-div{
+    display:flex;
+    flex-direction:column;
+  }
+  .btn-2{
+    margin-top:15px;
+  }
+
+  .trend-movies-grid{
+    display:flex!important;
+    flex-direction:column;
+    align-items:center !important;
+   }
+   .overview{
+    padding:20px;
+    font-size:10px;
+    font-family: poppins;
+    min-height:250px;
+  }
+  .bug-card{
+    min-height:450px;
+  }
+  .movie-info-div{
+    font-size:10px;
+    font-family:poppins;
+    padding:0px 20px 20px 20px;
+  }
+  .btn-div-2{
+    display:flex;
+    justify-content:center;
+  }
+  .show-details-div{
+    padding-left:15px;
+    padding-right:15px;
+  }
+  .show-title{
+    margin-top:15px;
+  }
+  .overlay{
+    background: linear-gradient(transparent 0%, rgb(19, 18, 18) 100%)!important;
+  }
+}
+@media only screen and (min-width:468px) and (max-width:768px){
+  .navbar-drop{
+    position:relative;
+    top:4px;
+  }
+  .banner{
+    text-align:center;
+    padding-left: 25px;
+    padding-right:25px;
+  }
+  .paragraph-1{
+    margin-top:30px;
+    padding-left: 50px;
+    padding-right:50px;
+  }
+  .btn-div{
+    margin-top:50px;
+  }
+  .btn-2{
+    margin-left:15px;
+  }
+  .trending-movies{
+    display:flex;
+    flex-direction:column;
+    align-items:center!important;
+    
+
+  }
+  .trend-movies-grid{
+    display :grid;
+    grid-template-columns:33% 33% 33%;
+    grid-column-gap: 9px;
+  }
+  .card{
+    width:14rem;
+    
+  }
+  .overview{
+    padding:20px;
+    font-size:10px;
+    font-family: poppins;
+    min-height:290px;
+  }
+  .bug-card{
+   height:500px;
+    min-height:450px;
+  }
+  .movie-info-div{
+    font-size:10px;
+    font-family:poppins;
+    padding:0px 20px 20px 20px;
+  }
+  .btn-div-2{
+    display:flex;
+    justify-content:center;
+  }
+  .show-details-div{
+    padding-right:350px
+  }
+  .mini-show-details-div{
+    width:500px;
+  }
+}
+@media only screen and (min-width:769px) and (max-width:1024px){
+  .navbar{
+    padding-left:50px;
+    padding-right:50px;
+   }
+   .navbar-drop{
+    position:relative;
+    top:5px;
+  }
+  .banner{
+    text-align:center;
+    padding-left: 25px;
+    padding-right:25px;
+  }
+  .paragraph-1{
+    margin-top:30px;
+    padding-left: 50px;
+    padding-right:50px;
+  }
+  .btn-div{
+    margin-top:50px;
+  }
+  .btn-2{
+    margin-left:15px;
+  }
+  .card{
+    width:19rem;
+    min-width:10rem;
+  }
+  .trending-movies{
+    display:flex;
+    flex-direction:column;
+    align-items:center!important;
+  }
+  .trend-movies-grid{
+    display :grid;
+    grid-template-columns:33% 33% 33%;
+    grid-column-gap:9px;
+  
+  }
+  .overview{
+    padding:20px;
+    font-size:13px;
+    font-family: poppins;
+    min-height:350px;
+  }
+  .bug-card{
+    height:550px;
+    min-height:450px;
+  }
+  .movie-info-div{
+    font-size:13px;
+    font-family:poppins;
+    padding:0px 20px 20px 20px;
+  }
+  .btn-div-2{
+    display:flex;
+    justify-content:center;
+  }
+  .show-details-div{
+    padding-right:550px
+  }
+  .mini-show-details-div{
+    width:700px;
+  }
+}
+@media only screen and (min-width:1200px) and (max-width:1440px){
+  .navbar{
+    padding-left:50px;
+    padding-right:50px;
+   }
+   .navbar-drop{
+    position:relative;
+    top:3px;
+  }
+  .banner{
+    text-align:center;
+    padding-left: 25px;
+    padding-right:25px;
+  }
+  .paragraph-1{
+    margin-top:30px;
+    padding-left: 125px;
+    padding-right:125px;
+  }
+  .btn-div{
+    margin-top:50px;
+  }
+  .btn-2{
+    margin-left:15px;
+  }
+  .trending-movies{
+    display:flex;
+    flex-direction:column;
+    align-items:center!important;
+  }
+  .trend-movies-grid{
+    display :grid;
+    grid-template-columns:33% 33% 33%;
+    grid-column-gap:15px;
+    grid-row-gap:3px;
+  }
+  .card{
+    width:24rem;
+    min-width:10rem;
+  }
+  .trending-movies{
+    display:flex;
+    flex-direction:column;
+    align-items:center!important;
+  }
+  .trend-movies-grid{
+    display :grid;
+    grid-template-columns:33% 33% 33%;
+    grid-column-gap:15px;
+    grid-row-gap:3px;
+  }
+  .overview{
+    padding:20px;
+    font-size:15px;
+    font-family: poppins;
+    min-height:430px;
+  }
+  .bug-card{
+    height:650px;
+    min-height:450px;
+  }
+  .movie-info-div{
+    font-size:13px;
+    font-family:poppins;
+    padding:0px 20px 20px 20px;
+  }
+  .btn-div-2{
+    display:flex;
+    justify-content:center;
+  }
+  .show-details-div{
+    padding-right:700px
+  }
+  .mini-show-details-div{
+    width:800px;
+  }
+}
+@media only screen and (min-width:2000px) and (max-width:3000px){
+  .navbar{
+    padding-left:50px;
+    padding-right:50px;
+   }
+   .navbar-drop{
+    position:relative;
+    top:5px;
+  }
+  .navbar-brand{
+    font-size:70px;
+  }
+  .form{
+    height:50px;
+    width:400px;
+  }
+  .search-btn{
+    width:100px;
+  }
+  .home-section{
+    height:700px!important;
+  }
+  .banner{
+    position: relative;
+    top:200px!important;
+    text-align:center;
+    padding-left: 25px;
+    padding-right:25px;
+  }
+  .title{
+    font-size:60px;
+  }
+  .paragraph-1{
+    margin-top:60px;
+    padding-left: 500px;
+    padding-right:500px;
+    font-size: 30px;
+  }
+  .btn-div{
+    margin-top:90px;
+  }
+  .btn-1{
+    font-size:25px;
+  }
+  .btn-2{
+    margin-left:15px;
+    font-size:25px;
+  }
+  .trending-movies{
+    display:flex;
+    flex-direction:column;
+    align-items:center!important;
+  }
+  .trend-movies-grid{
+    display :grid;
+    grid-template-columns:33% 33% 33%;
+    grid-column-gap:15px;
+    grid-row-gap:3px;
+  }
+  .card{
+    width:35rem;
+    min-width:10rem;
+  }
+  .trending-movies{
+    display:flex;
+    flex-direction:column;
+    align-items:center!important;
+  }
+  .trend-movies-grid{
+    display :grid;
+    grid-template-columns:33% 33% 33%;
+    grid-column-gap:15px;
+    grid-row-gap:3px;
+  }
+  .overview{
+    padding:30px;
+    font-size:23px;
+    font-family: poppins;
+    min-height:670px;
+  }
+  .bug-card{
+    height:950px;
+    min-height:450px;
+  }
+  .movie-info-div{
+    font-size:23px;
+    font-family:poppins;
+    padding:0px 30px 30px 30px;
+  }
+  .btn-div-2{
+    display:flex;
+    justify-content:center;
+  }
+  .show-details-div{
+    position:relative;
+    top:250px;
+    padding-right:800px
+  }
+  .mini-show-details-div{
+    width:800px;
+  }
+}

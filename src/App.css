@@ -244,6 +244,58 @@ color:hsl(148, 63%, 31%);
   font-size:17px;
   font-weight:bold;
 }
+.signup-form{
+  display:flex;
+  flex-direction:column;
+  align-self:space-around;
+}
+.signup{
+  position:relative;
+  object-fit:contain;
+  height:100vh;
+  background-repeat: none;
+  background-size: cover;
+  background-blend-mode: luminosity;
+
+}
+.signup-body{
+  width:400px;
+  height:450px;
+  background:white;
+  padding: 30px 40px 30px 40px;
+  font-family:poppins;
+  border-radius:5px;
+}
+.overlay-2{
+  width: 100%;
+  height:100%;
+  background: linear-gradient(90deg, transparent 32%, rgba(1,1,6,1) 150%);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.signup-btn-div{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+
+  max-height:90px;
+}
+.signup-btn{
+  background:hsl(148, 63%, 31%);
+  color:white;
+  border:none;
+  padding-top :10px;
+  padding-bottom:10px;
+  border-radius:5px;
+}
+.signup-title{
+  color:rgba(1,1,6,1);
+  font-weight:bold;
+}
+.form-control:focus{
+  border:1px solid hsl(148, 63%, 31%)!important;
+}
 @media only screen and (min-width:320px) and (max-width:430px){
   .navbar{
     background:rgba(1, 0, 41, 1);
@@ -302,6 +354,9 @@ color:hsl(148, 63%, 31%);
   }
   .overlay{
     background: linear-gradient(transparent 0%, rgb(19, 18, 18) 100%)!important;
+  }
+  .signup-body{
+    width:320px!important;
   }
 }
 @media only screen and (min-width:468px) and (max-width:768px){

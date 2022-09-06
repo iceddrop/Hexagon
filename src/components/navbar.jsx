@@ -75,7 +75,7 @@ console.log(searchData)
                 <Link to='./signup' className="nav-link " href="#">Sign Up</Link>
               </li>
               <li class="nav-item">
-                <Link to='./error' className="nav-link " >Sign In</Link>
+                <Link to='./signin' className="nav-link " >Sign In</Link>
               </li>
             </ul>
             <form class="d-flex">

@@ -48,6 +48,7 @@
 }
 .search-body{
   margin:70px 0 0 0;
+
 }
 .result-text{
   color:red;
@@ -296,6 +297,32 @@ color:hsl(148, 63%, 31%);
 .form-control:focus{
   border:1px solid hsl(148, 63%, 31%)!important;
 }
+
+.alternative-text {
+  width: 100%; 
+  text-align: center; 
+  border-bottom: 1px solid #000; 
+  line-height: 0.1em;
+  margin: 10px 0 20px; 
+} 
+.alternative-text span { 
+   background:white; 
+   padding:0 10px; 
+}
+.alternative-btn-div{
+  display:flex;
+  flex-direction:column;
+  justify-content:center
+}
+.footer-list{
+  list-style:none;
+  font-family:poppins;
+  color:hsl(184, 9%, 62%);
+}
+.icon{
+  color:hsl(184, 9%, 62%);
+  font-size:20px;
+}
 @media only screen and (min-width:320px) and (max-width:430px){
   .navbar{
     background:rgba(1, 0, 41, 1);
@@ -357,6 +384,9 @@ color:hsl(148, 63%, 31%);
   }
   .signup-body{
     width:320px!important;
+  }
+  .icon-div{
+    margin-left: 40px;
   }
 }
 @media only screen and (min-width:468px) and (max-width:768px){

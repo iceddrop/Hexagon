@@ -8,7 +8,7 @@ import Signup from './components/signup'
 import MovieOverview from './components/movieOverview'
 import Signin from './components/signin'
 import Error from './components/errorpage'
-
+import Footer from './components/footer'
 function App() {
 
   return (
@@ -19,10 +19,11 @@ function App() {
      <Route path='/' element={<Home/>}/>
      <Route path='/signup' element={<Signup/>}/>
      <Route path='movieOverview/:id' element={<MovieOverview/>}/>
-     <Route path='./signin' element={<Signin/>}/>
+     <Route path='/signin' element={<Signin/>}/>
      <Route path='*' element={<Error/>}/>
   </Routes>
 </Router>
+<Footer/>
 </>
   )
 }

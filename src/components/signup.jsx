@@ -20,7 +20,7 @@ export default function Signup(){
         setFormData(prevFormData =>{
           return{
             ...prevFormData,
-            [name] : value
+            [name] :  type === 'checkbox' ? checked : value
           }
         })
     }
@@ -40,8 +40,6 @@ export default function Signup(){
             <div className='overlay-2'>
              
                 <div class='signup-body'>
-                    
-                    
                     <h5 className='signup-title text-center'>Create an account</h5>
                     <form className='signup-form' onSubmit={handleSubmit}>
                     <input 

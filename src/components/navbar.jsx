@@ -78,12 +78,14 @@ console.log(searchData)
                 <Link to='./signin' className="nav-link " >Sign In</Link>
               </li>
             </ul>
-            <form class="d-flex">
+
+          </div>
+          <form class="d-flex">
               <input class="form-control form me-2" onChange={handleChange} value={searchInput} type="search" placeholder="What do you want to watch" aria-label="Search"/>
               <button class="search-btn" onClick={search} type="submit">Search</button>
             </form>
-          </div>
         </div>
+
    </nav>
                 <section className='search-body'>
                 {displaySearchText ? <p className='result-text'>Your search results</p> : ''}

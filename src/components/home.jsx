@@ -50,6 +50,18 @@ export default function Home(){
         {trendingEl}
         </div>
     </section>
+    <section>
+         <div className='d-flex'>
+           <p>Drama</p>
+           <p>Comedy</p>
+           <p>Horror</p>
+           <p>Romance</p>
+           <p>Fantasy</p>
+           <p>Animation</p>
+           <p>Action</p>
+           <p>Sci-Fi</p>
+         </div>      
+    </section>   
     </>
     )
 }

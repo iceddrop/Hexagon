@@ -50,7 +50,7 @@ console.log(searchData)
 
   React.useEffect(() =>{
     // calculates the min and max width for horizontal scroll.
-    setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth + 350)
+    setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth)
   },[])
 
 

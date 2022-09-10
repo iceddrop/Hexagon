@@ -40,15 +40,16 @@ export default function Signin(){
                             value={formData.password}
                             className='form-control mt-3'
                             />
-                            <div className='remember-div d-flex'>
+                            <div className='remember-div d-flex mt-2'>
                                <input
                                type='radio'
                                  id="subscribe"
                                  onChange={handleChange}
                                  name="subscribe"
                                  checked={formData.subscribe}
+                                 
                                />
-                               <label className='m-2' htmlFor='remember'>Remember me</label>
+                               <label className='ms-2' htmlFor='remember'>Remember me</label>
                             </div>
                             <div className='signup-btn-div mt-2'>
                             <button className='signup-btn'>LOG IN</button>

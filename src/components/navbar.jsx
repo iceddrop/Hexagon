@@ -44,16 +44,7 @@ console.log(searchData)
     )
     )
 
-  //state to store serach result width
-  const [width, setWidth] = React.useState(0)
-  const carousel = useRef()
-
-  React.useEffect(() =>{
-    // calculates the min and max width for horizontal scroll.
-    setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth)
-  },[])
-
-
+ 
 
     return(
         <>
@@ -90,12 +81,12 @@ console.log(searchData)
                 <section className='search-body'>
                 {displaySearchText ? <p className='result-text'>Your search results</p> : ''}
                  {/* swiper library to display search result in an horizontal scroll*/}
-                  <motion.div ref={carousel} className='carousel'>
-                        <motion.div drag='x' dragConstraints={{right:0, left:-width}} className='inner-carousel'>
+                  <div className='carousel'>
+                        <div  className='inner-carousel'>
                             {moveEl}
-                        </motion.div>
-                      </motion.div>
+                        </div>
+                      </div>
                </section>
                </>
     )
-}
+} 

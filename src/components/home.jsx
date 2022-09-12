@@ -50,7 +50,7 @@ export default function Home(){
         {trendingEl}
         </div>
     </section>
-    <section>
+  {/*  <section>
          <div className='d-flex'>
            <p>Drama</p>
            <p>Comedy</p>
@@ -61,7 +61,7 @@ export default function Home(){
            <p>Action</p>
            <p>Sci-Fi</p>
          </div>      
-    </section>   
+    </section>   */}
     </>
     )
 }

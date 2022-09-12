@@ -30,9 +30,12 @@
 .card{
     width:16rem; 
     min-width:10rem;
-    
+  
 }
-
+#search-card{
+  height:300px;
+  min-height:300px!important;
+}
 .card-text{
   text-align:center;
   font-family:poppins;

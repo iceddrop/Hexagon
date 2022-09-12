@@ -23,8 +23,7 @@
   color:hsl(184, 9%, 62%)!important;
 }
 .card-img-top{
-  width: 100%; /* or any custom size */
-  height: 100%; 
+  width: 100%; /* or any custom size */ 
   object-fit: contain;
 
 }
@@ -144,6 +143,9 @@
   border: none;
   color:white;
   font-family:poppins;
+  font-size:15px;
+  text-align:center;
+  text-decoration:none;
 }
 .show-btn{
   background:transparent;
@@ -174,6 +176,7 @@ color:white;
 .show-search-btn:hover{
 color:hsl(148, 63%, 31%);
 }
+
 .overview-1{
   width:100%;
   height:1000px;
@@ -263,6 +266,7 @@ color:hsl(148, 63%, 31%);
   background-blend-mode: luminosity;
 
 }
+
 .signup-body{
   width:400px;
   height:450px;
@@ -364,9 +368,7 @@ color:hsl(148, 63%, 31%);
     font-family: poppins;
     min-height:250px;
   }
-  .bug-card{
-    min-height:450px;
-  }
+ 
   .movie-info-div{
     font-size:10px;
     font-family:poppins;
@@ -437,8 +439,8 @@ color:hsl(148, 63%, 31%);
     min-height:290px;
   }
   .bug-card{
-   height:500px;
-    min-height:450px;
+   height:300px !important;
+    min-height:300px!important;
   }
   .movie-info-div{
     font-size:10px;
@@ -496,6 +498,9 @@ color:hsl(148, 63%, 31%);
     grid-column-gap:9px;
   
   }
+  /*.trend-img{
+    height:20px!important;
+  }*/
   .overview{
     padding:20px;
     font-size:13px;

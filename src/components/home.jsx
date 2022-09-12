@@ -45,9 +45,10 @@ export default function Home(){
     </section>
     <p className='trend-title'>Trending</p>
         <section className='trending-movies'>
-       
-        <div className='trend-movies-grid'>
+       <div className='carousel'>
+        <div className='inner-carousel'>
         {trendingEl}
+        </div>
         </div>
     </section>
   {/*  <section>

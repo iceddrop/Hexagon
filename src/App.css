@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Metal+Mania&family=Poppins:wght@300&family=Righteous&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Cinzel:wght@600&family=Mate&family=Poppins:ital,wght@1,300&display=swap');
+.overall{
+  background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
+}
 .navbar-brand{
   font-family:Metal Mania;
   color:hsl(148, 63%, 31%)!important;
@@ -337,6 +340,11 @@ color:hsl(148, 63%, 31%);
   color:hsl(184, 9%, 62%);
   font-size:20px;
 }
+@media only screen and (min-width:319px) and (max-width:321px){
+  #home-section{
+    height:650px!important;
+  }
+}
 @media only screen and (min-width:320px) and (max-width:430px){
   .navbar{
     background:rgba(1, 0, 41, 1);
@@ -399,6 +407,9 @@ color:hsl(148, 63%, 31%);
   }
   .icon-div{
     margin-left: 40px;
+  }
+  .categories-div{
+    padding-top:40px;
   }
 }
 @media only screen and (min-width:468px) and (max-width:768px){

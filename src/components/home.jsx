@@ -45,7 +45,7 @@ const popularEl = popularMoviesData.map(show =>(
  
     return(
         <>
-    <section className='home-section' style={{ backgroundImage: `url(${background})` }}>
+    <section id='home-section' className='home-section' style={{ backgroundImage: `url(${background})` }}>
         <div className='home-overlay'>
         <div className='banner'>
             <h1 className="title">All Your Streaming Services In One Place</h1>

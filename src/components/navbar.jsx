@@ -60,10 +60,10 @@ console.log(searchData)
                 <Link to='./' className= "nav-link" aria-current="page" >Home</Link>
               </li>
               <li class="nav-item">
-                <a className= "nav-link" href="#">Tv Shows</a>
+                <Link to='./showCategories' className= "nav-link" href="#">Tv Shows</Link>
               </li>
               <li class="nav-item">
-                <Link to='./signup' className="nav-link " href="#">Sign Up</Link>
+                <Link to='./signup' className="nav-link " >Sign Up</Link>
               </li>
               <li class="nav-item">
                 <Link to='./signin' className="nav-link " >Sign In</Link>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 
-export default function MovieOverview(){
+export default function ShowOverview(){
     const [moviedetails, setMovieDetails] = React.useState({})
     const [genresArr,setGenresArr] = React.useState([])
     

@@ -1,10 +1,13 @@
 import React from 'react'
 import background from '../assets/Untitled.jpeg'
-import TrendingMovie from './trendingMovie'
-
+import TrendingMovie from './trendingShow'
+import PopularShow from './popularShow'
 export default function Home(){
       //state to store trending movies data
   const [trendingMoviesData, setTrendingMoviesData] = React.useState([])
+
+  const [popularMoviesData, setPopularMoviesData] = React.useState([])
+
   React.useEffect(()=>{
        //fetchs trending shows data
        fetch('https://api.themoviedb.org/3/trending/tv/day?api_key=172f725b29bb276f5c4b6e294a988fc5')
@@ -23,11 +26,22 @@ export default function Home(){
 
  
   const trendingEl = trendingMoviesData.map(movie=>(
-   <TrendingMovie adult={movie.adult} ion={() => ion(movie.id)} id={movie.id} country={movie.origin_country[0]} rating={movie.vote_average} dateReleased={movie.first_air_date} overview={movie.overview} title={movie.original_name} image={movie.poster_path}/>
+   <TrendingMovie  id={movie.id} key={movie.id}   title={movie.original_name} image={movie.poster_path}/>
   ))
 
 
   
+  React.useEffect(()=>{
+       //fetchs trending shows data
+       fetch('https://api.themoviedb.org/3/tv/popular?api_key=172f725b29bb276f5c4b6e294a988fc5&language=en-US&page=1')
+       .then(res => res.json())
+       .then(data => setPopularMoviesData(data.results.map(movie=>movie)))
+  },[])
+console.log(popularMoviesData)
+
+const popularEl = popularMoviesData.map(show =>(
+    <PopularShow id={show.id}  key={show.id}  title={show.original_name} image={show.poster_path}/>
+))
  
     return(
         <>
@@ -43,7 +57,7 @@ export default function Home(){
         </div>
         </div>
     </section>
-    <p className='trend-title'>Trending</p>
+    <p className='trend-title'>Trending Now</p>
         <section className='trending-movies'>
        <div className='carousel'>
         <div className='inner-carousel'>
@@ -51,6 +65,16 @@ export default function Home(){
         </div>
         </div>
     </section>
+    <p className='trend-title'>Popular Shows</p>
+        <section className='trending-movies'>
+       <div className='carousel'>
+        <div className='inner-carousel'>
+        {popularEl}
+        </div>
+        </div>
+    </section>
+    
+
   {/*  <section>
          <div className='d-flex'>
            <p>Drama</p>

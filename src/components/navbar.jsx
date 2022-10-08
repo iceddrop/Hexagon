@@ -1,13 +1,12 @@
 import React from 'react'
 import {FaBars} from 'react-icons/fa'
 import Search from './search'
-import {motion} from 'framer-motion'
-import {useRef } from 'react'
 import {Link} from 'react-router-dom'
+
 
 export default function Navbar(){
 
-     //store search input field data here
+    //store search input field data here
   const [searchInput, setSearchInput] =  React.useState('')
   //store data gotten from API here
   const [searchData, setSearchData] = React.useState([])
@@ -15,7 +14,7 @@ export default function Navbar(){
   const [displaySearchText, setDisplaySearchText] = React.useState(false)
   //state to change the navbar background
   const [navbar, setNavbar] = React.useState(false)
-  console.log(searchData)
+  
 
 
 
@@ -34,7 +33,7 @@ export default function Navbar(){
     e.preventDefault();
   }
 
-console.log(searchData)
+
 
 
 
@@ -43,7 +42,6 @@ console.log(searchData)
       <Search id={movie.id}  name={movie.name} image={movie.poster_path} summary={movie.overview}/>
     )
     )
-
  
 
     return(
@@ -81,7 +79,7 @@ console.log(searchData)
                 <section className='search-body'>
                 {displaySearchText ? <p className='result-text'>Your search results</p> : ''}
                  {/* swiper library to display search result in an horizontal scroll*/}
-                  <div className='carousel'>
+                 <div className='carousel'>
                         <div  className='inner-carousel'>
                             {moveEl}
                         </div>
@@ -90,3 +88,4 @@ console.log(searchData)
                </>
     )
 } 
+

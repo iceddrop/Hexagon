@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Metal+Mania&family=Poppins:wght@300&family=Righteous&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Cinzel:wght@600&family=Mate&family=Poppins:ital,wght@1,300&display=swap');
+
 .overall{
   background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%);
 }
@@ -47,6 +48,8 @@
 .inner-carousel{
   display:flex!important;
   overflow:scroll;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
 }
 
 .carousel{
@@ -54,6 +57,10 @@
   height:100%;
   cursor:grab;
   overflow:hidden;
+
+}
+.inner-carousel::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
 }
 .search-body{
   margin:70px 0 0 0;

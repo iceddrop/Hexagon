@@ -2,7 +2,7 @@ import React from "react";
 import background from "../assets/Untitled.jpeg";
 import { GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
-import { useGoogleLogin } from '@react-oauth/google';
+import { useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
 /*onSuccess={(credentialResponse) => {
   var credentialResponseDecoded = jwtDecode(credentialResponse.credential);
@@ -14,30 +14,45 @@ onError={() => {
 
 export default function Signin() {
   const [formData, setFormData] = React.useState({
-    name: '',
+    name: "",
     email: "",
     password: "",
     confirmPassword: "",
-    subscribe: false
-  }
-)
+    subscribe: false,
+  });
+
+  const responseGoogle = (response) => {
+    // Send the Google token to your server
+    axios.post('/api/auth/google', { token: response.tokenId })
+      .then(res => {
+        // Handle successful login, store user data in local storage or context
+        localStorage.setItem('user', JSON.stringify(res.data));
+        // Redirect to dashboard or home page
+        window.location.href = '/dashboard';
+      })
+      .catch(err => {
+        console.error('Error logging in with Google', err);
+      });
+  };
+
+
   const login = useGoogleLogin({
-    onSuccess: async(response) => {
+    onSuccess: async (response) => {
       try {
         const res = await axios.get(
-          "https://www.googleapis.com/oauth2/v3/userinfo",{
+          "https://www.googleapis.com/oauth2/v3/userinfo",
+          {
             headers: {
-              Authorization : `Bearer ${response.access_token}`,
-            }
+              Authorization: `Bearer ${response.access_token}`,
+            },
           }
         );
         console.log(res);
-      } catch (err){
-         console.log(err);
+      } catch (err) {
+        console.log(err);
       }
-    } 
+    },
   });
-  
 
   function handleChange(event) {
     const { name, value, type, checked } = event.target;
@@ -91,11 +106,17 @@ export default function Signin() {
               <span>OR</span>
             </p>
             <div className="alternative-btn-div">
-              <button
-              className="signup-btn"
-                onClick={() => login()}
-              >Sign in with Google</button>
-              
+              <GoogleLogin
+                clientId="YOUR_GOOGLE_CLIENT_ID"
+                buttonText="Login with Google"
+                onSuccess={responseGoogle}
+                onFailure={responseGoogle}
+                cookiePolicy={"single_host_origin"}
+              />
+              <button className="signup-btn" onClick={() => login()}>
+                Sign in with Google
+              </button>
+
               <button className="signup-btn mt-3 bg-primary">
                 LOG IN WITH FACEBOOK
               </button>

@@ -34,10 +34,8 @@ export default function ShowCategories(){
         .then(res => res.json())
         .then(data => setDrama(data.results.map(movie=>movie)))
    },[])
- 
 
-
- const animationEl = animation.map(show =>(
+ const animationEl = animation.map(show =>       (
      <Category id={show.id}  key={show.id}  title={show.original_name} image={show.poster_path}/>
  ))
 
@@ -45,7 +43,7 @@ export default function ShowCategories(){
     <Category id={show.id}  key={show.id}  title={show.original_name} image={show.poster_path}/>
 ))
 
-const scienceEl = science.map(show =>(
+const scienceEl = science.map(show =>  (
     <Category id={show.id}  key={show.id}  title={show.original_name} image={show.poster_path}/>
 ))
 

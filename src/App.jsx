@@ -10,11 +10,12 @@ import ShowCategories from "./components/showCategories";
 import Error from "./components/errorpage";
 import Footer from "./components/footer";
 import Profile from "./pages/profile";
-import { AuthProvider } from "./context/AuthContext";
+import { GoogleOAuthProvider } from '@react-oauth/google';
 function App() {
+  const clientId = "692557906302-rfvk3109g1gvh5f42ht123tmkknk5o0h.apps.googleusercontent.com";
   return (
     <div className="overall">
-      <AuthProvider>
+      <GoogleOAuthProvider clientId={clientId}>
         <Router>
           <Navbar />
           <Routes>
@@ -28,7 +29,7 @@ function App() {
           </Routes>
         </Router>
         <Footer />
-      </AuthProvider>
+      </GoogleOAuthProvider>
     </div>
   );
 }

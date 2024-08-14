@@ -1,17 +1,23 @@
-import { AuthContext } from '../context/AuthContext';
-import React, { useContext } from 'react';
-export default function Profile(){
-    const { user } = useContext(AuthContext);
-    return(
-        <div>
-        <h1>Dashboard</h1>
-        {user && (
-          <div>
-            <p>Name: {user.name}</p>
-            <p>Email: {user.email}</p>
-            <img src={user.picture} alt="Profile" />
-          </div>
-        )}
-      </div>
-    )
+
+import React, { useContext } from "react";
+import { signOut } from "firebase/auth";
+import { auth } from "../../firebase-config";
+
+export default function Profile() {
+  const handleLogout = () => {
+    signOut(auth)
+      .then(() => {
+        // Sign-out successful, handle redirect or UI update
+        console.log("User signed out");
+      })
+      .catch((error) => {
+        console.error("Sign out error", error);
+      });
+  };
+
+  return (
+    <div className="px-30">
+      <button className="btn" onClick={handleLogout}>logOut</button>
+    </div>
+  );
 }

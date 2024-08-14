@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import background from "../assets/Untitled.jpeg";
-import { GoogleLogin } from "@react-oauth/google";
-import { useGoogleLogin } from "@react-oauth/google";
-import axios from "axios";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebase-config";
+import { useNavigate } from "react-router-dom";
 /*onSuccess={(credentialResponse) => {
   var credentialResponseDecoded = jwtDecode(credentialResponse.credential);
   console.log(credentialResponseDecoded);
@@ -12,42 +12,81 @@ onError={() => {
 }}*/
 
 export default function Signin() {
-    const handleLoginSuccess = (response) => {
-      console.log("Google login response", response);
+  const [formData, setFormData] = React.useState({
+    email: "",
+    password: "",
+    subscribe: false,
+  });
 
-      axios.post("http://localhost/Tomiwa/php/Hexagon-backend/index.php", {
-          token: response.credential,
-        })
-        .then((res) => {
-          console.log("Server response", res.data);
-          localStorage.setItem("user", JSON.stringify(res.data));
-          window.location.href = "../pages/profile.jsx";
-        })
-        .catch((err) => {
-          console.error("Error logging in with Google", err);
-        });
-    };
+  const [error,setError] = useState('');
+  const navigate = useNavigate();
 
-    const handleLoginFailure = (error) => {
-      console.error("Google login failed", error);
-    };
+  const onLogin = (e) => {
+    e.preventDefault();
+    signInWithEmailAndPassword(auth, formData.email, formData.password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        navigate("/home");
+        console.log(user);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        setError(errorCode, errorMessage);
+      });
+  };
+
+  function handleChange(event) {
+    const { name, value, type, checked } = event.target;
+    setFormData((prevFormData) => {
+      return {
+        ...prevFormData,
+        [name]: value,
+      };
+    });
+  }
   return (
     <div className="signup" style={{ backgroundImage: `url(${background})` }}>
       <div className="overlay-2">
         <div className="signup-body">
-          
-          <div className="alternative mt-3">
-            <p className="text-center alternative-text">
-              <span>OR</span>
-            </p>
-            <div className="alternative-btn-div">
-            <GoogleLogin
-        onSuccess={handleLoginSuccess}
-        onError={handleLoginFailure}
-      />
-             
+          <h5 className="signup-title text-center">Sign in</h5>
+          <form className="signup-form">
+            <input
+              type="text"
+              placeholder="email"
+              onChange={handleChange}
+              name="email"
+              value={formData.email}
+              className="form-control mt-2"
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              onChange={handleChange}
+              name="password"
+              value={formData.password}
+              className="form-control mt-3"
+            />
+            <div className="remember-div d-flex align-items-center mt-3">
+              <input
+                type="radio"
+                id="subscribe"
+                onChange={handleChange}
+                name="subscribe"
+                checked={formData.subscribe}
+              />
+              <label className="ms-2" htmlFor="remember">
+                Remember me
+              </label>
             </div>
-          </div>
+            <p className="text-danger pt-2">{error}</p>
+            <div className="signup-btn-div mt-3">
+              <button onClick={onLogin} className="signup-btn">
+                LOG IN
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>

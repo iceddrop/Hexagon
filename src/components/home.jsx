@@ -54,6 +54,8 @@ export default function Home() {
     />
   ));
 
+
+
   return (
     <>
       <section
@@ -74,7 +76,7 @@ export default function Home() {
                 HOW IT WORKS
               </a>
               <a href="#" className="btn-2">
-                START A WATCHLIST
+                START WATCHLIST
               </a>
             </div>
           </div>

@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import background from "../assets/Untitled.jpeg";
-import { GoogleLogin } from "@react-oauth/google";
-import { jwtDecode } from "jwt-decode";
-import { useGoogleLogin } from '@react-oauth/google';
-import axios from "axios";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebase-config";
+import { useNavigate } from "react-router-dom";
 /*onSuccess={(credentialResponse) => {
   var credentialResponseDecoded = jwtDecode(credentialResponse.credential);
   console.log(credentialResponseDecoded);
@@ -14,30 +13,29 @@ onError={() => {
 
 export default function Signin() {
   const [formData, setFormData] = React.useState({
-    name: '',
     email: "",
     password: "",
-    confirmPassword: "",
-    subscribe: false
-  }
-)
-  const login = useGoogleLogin({
-    onSuccess: async(response) => {
-      try {
-        const res = await axios.get(
-          "https://www.googleapis.com/oauth2/v3/userinfo",{
-            headers: {
-              Authorization : `Bearer ${response.access_token}`,
-            }
-          }
-        );
-        console.log(res);
-      } catch (err){
-         console.log(err);
-      }
-    } 
+    subscribe: false,
   });
-  
+
+  const [error,setError] = useState('');
+  const navigate = useNavigate();
+
+  const onLogin = (e) => {
+    e.preventDefault();
+    signInWithEmailAndPassword(auth, formData.email, formData.password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        navigate("/home");
+        console.log(user);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        setError(errorCode, errorMessage);
+      });
+  };
 
   function handleChange(event) {
     const { name, value, type, checked } = event.target;
@@ -56,10 +54,10 @@ export default function Signin() {
           <form className="signup-form">
             <input
               type="text"
-              placeholder="Name"
+              placeholder="email"
               onChange={handleChange}
-              name="name"
-              value={formData.name}
+              name="email"
+              value={formData.email}
               className="form-control mt-2"
             />
             <input
@@ -70,7 +68,7 @@ export default function Signin() {
               value={formData.password}
               className="form-control mt-3"
             />
-            <div className="remember-div d-flex mt-2">
+            <div className="remember-div d-flex align-items-center mt-3">
               <input
                 type="radio"
                 id="subscribe"
@@ -82,25 +80,13 @@ export default function Signin() {
                 Remember me
               </label>
             </div>
-            <div className="signup-btn-div mt-2">
-              <button className="signup-btn">LOG IN</button>
-            </div>
-          </form>
-          <div className="alternative mt-3">
-            <p className="text-center alternative-text">
-              <span>OR</span>
-            </p>
-            <div className="alternative-btn-div">
-              <button
-              className="signup-btn"
-                onClick={() => login()}
-              >Sign in with Google</button>
-              
-              <button className="signup-btn mt-3 bg-primary">
-                LOG IN WITH FACEBOOK
+            <p className="text-danger pt-2">{error}</p>
+            <div className="signup-btn-div mt-3">
+              <button onClick={onLogin} className="signup-btn">
+                LOG IN
               </button>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>

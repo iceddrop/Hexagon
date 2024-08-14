@@ -1,11 +1,12 @@
 import React from 'react'
 import { FaBars } from 'react-icons/fa'
 import Search from './search'
-import { Link } from 'react-router-dom'
-
+import { Link, useNavigate } from 'react-router-dom'
+import { signOut } from "firebase/auth";
+import { auth } from "../../firebase-config";
 
 export default function Navbar() {
-
+  const navigate = useNavigate();
   //store search input field data here
   const [searchInput, setSearchInput] = React.useState('')
   //store data gotten from API here
@@ -38,38 +39,52 @@ export default function Navbar() {
   )
   )
 
+  const handleLogout = () => {
+    signOut(auth)
+      .then(() => {
+        // Sign-out successful, handle redirect or UI update
+        navigate("/signin")
+
+      })
+      .catch((error) => {
+        console.error("Sign out error", error);
+      });
+  };
 
   return (
     <>
              <nav className="bg-dark navbar navbar-expand-md fixed-top navbar-light" >
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Hexagon</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <div className="container-fluid">
+          <a className="navbar-brand" href="#">Hexagon</a>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <FaBars />
           </button>
-          <div class="collapse navbar-collapse navbar-drop" id="navbarTogglerDemo02">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <Link to='./' className="nav-link" aria-current="page" >Home</Link>
+          <div className="collapse navbar-collapse navbar-drop" id="navbarTogglerDemo02">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <Link to='./home' className="nav-link" aria-current="page" >Home</Link>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link to='./showCategories' className="nav-link" href="#">Tv Shows</Link>
               </li>
-              <li class="nav-item">
-                <Link to='./signup' className="nav-link " >Sign Up</Link>
+              <li className="nav-item">
+                <Link to='./' className="nav-link " >Sign Up</Link>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link to='./signin' className="nav-link " >Sign In</Link>
               </li>
-              <li class="nav-item">
-                <Link to='#' className="nav-link " >My profile</Link>
+              <li className="nav-item">
+                <Link to='/profile' className="nav-link " >My profile</Link>
+              </li>
+              <li className="nav-item">
+                <p className="nav-link " onClick={handleLogout}>Logout</p>
               </li>
             </ul>
 
           </div>
-          <form class="d-flex">
-            <input class="form-control form me-2" onChange={handleChange} value={searchInput} type="search" placeholder="What do you want to watch" aria-label="Search" />
-            <button class="search-btn" onClick={search} type="submit">Search</button>
+          <form className="d-flex">
+            <input className="form-control form me-2" onChange={handleChange} value={searchInput} type="search" placeholder="What do you want to watch" aria-label="Search" />
+            <button className="search-btn" onClick={search} type="submit">Search</button>
           </form>
         </div>
 

@@ -23,7 +23,7 @@ export default function Navbar() {
   function handleChange(event) {
     setSearchInput(event.target.value)
   }
-  console.log(searchInput)
+  
   // fetchs the data from the movie API and stores it in inside searchData state
   function search(e) {
     fetch(`https://api.themoviedb.org/3/search/tv?api_key=172f725b29bb276f5c4b6e294a988fc5&language=en-US&page=1&query=${searchInput}&include_adult=false`)
@@ -53,7 +53,7 @@ export default function Navbar() {
 
   return (
     <>
-             <nav className="bg-dark navbar navbar-expand-md fixed-top navbar-light" >
+       <nav className="bg-dark navbar navbar-expand-md fixed-top navbar-light" >
         <div className="container-fluid">
           <a className="navbar-brand" href="#">Hexagon</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">

@@ -2,16 +2,11 @@ import React, { useState } from "react";
 import background from "../assets/Untitled.jpeg";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase-config";
-import { useNavigate } from "react-router-dom";
-/*onSuccess={(credentialResponse) => {
-  var credentialResponseDecoded = jwtDecode(credentialResponse.credential);
-  console.log(credentialResponseDecoded);
-}}
-onError={() => {
-  console.log("Login Failed");
-}}*/
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Signin() {
+
+  const [showNav, setShowNav] = useState(false);
   const [formData, setFormData] = React.useState({
     email: "",
     password: "",
@@ -28,7 +23,6 @@ export default function Signin() {
         // Signed in
         const user = userCredential.user;
         navigate("/home");
-        console.log(user);
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -81,11 +75,12 @@ export default function Signin() {
               </label>
             </div>
             <p className="text-danger pt-2">{error}</p>
-            <div className="signup-btn-div mt-3">
+            <div className="signup-btn-div mt-2">
               <button onClick={onLogin} className="signup-btn">
                 LOG IN
               </button>
             </div>
+            <p className='text-center mt-2'>Don't have an account ? <Link to='/'>Signup here</Link></p>
           </form>
         </div>
       </div>
